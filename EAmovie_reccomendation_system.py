@@ -13,6 +13,8 @@ the Illuminati trick Hulk into a shuttle and launch him into space
 Unfortunately, Hulk lands on the planet Sakaar 
 where he is sold into slavery and trained as a gladiator
 '''
+
+
 #creating a dictionary using from the txt file
 
 
@@ -34,5 +36,31 @@ for line in movie_lines:
 
 #printing the dictionary to see if it worked
 #print(movie_dict['Movie D'])
+
+
+#The movie reccomendation system
+#def movie_reccomendation():
+
+scores = {}
+#
+for movie, description in movie_dict.items():
+    #processing the descriptions
+    #tokenising each description
+    movie_doc = nlp(description)
+    #finding the similarity scores for all the movie descriptions
+    similarity = nlp(hulk).similarity(movie_doc)
+
+    #whatever the similarity were extracting the key, value pair
+    scores[movie, description] = similarity
+
+#reccomending the film with the hoghest similarity
+reccomendation = max(scores, key=scores.get)
+
+print(f"Based on the description i would recommend this movie: {reccomendation}")
+
+
+
+
+
 
 
