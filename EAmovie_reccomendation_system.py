@@ -31,7 +31,7 @@ for line in movie_lines:
 
 
 #The movie reccomendation system
-def recommedation_system(movie_description):
+def recommendation_system(movie_description):
 
     movie_description = nlp(movie_description)
 
@@ -54,8 +54,15 @@ def recommedation_system(movie_description):
     print(f"Based on the description provided, I would recommend: {recommendation}")
 
 
+#movie description
+hulk = '''
+When the Hulk becomes too dangerous for the Earth,
+the Illuminati trick Hulk into a shuttle and launch him into space
+ to a planet where the Hulk can live in peace.
+Unfortunately, Hulk lands on the planet Sakaar 
+where he is sold into slavery and trained as a gladiator
+'''
 
 
-
-recomedation_system(hulk)
+recommendation_system(hulk)
 
